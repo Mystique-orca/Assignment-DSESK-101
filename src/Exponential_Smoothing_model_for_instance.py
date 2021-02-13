@@ -80,7 +80,7 @@ scaler = Scaler()
 rescaled = scaler.fit_transform(series)
 
 #training and testing dataset
-train, val = series.split_after(pd.Timestamp('2020-01-23 19:41:50'))
+train, val = rescaled.split_after(pd.Timestamp('2020-01-23 19:41:50'))
 
 #Exponential smoothing model
 model = ExponentialSmoothing()
@@ -88,6 +88,10 @@ model.fit(train)
 prediction = model.predict(len(val))
 
 #Evaluation metrics
-acc = accuracy_score(np.array(val), np.array(pred_val))
+train.plot()
+val.plot()
+prediction.plot()
+print("MAPE:", mape(prediction, val))
+acc = accuracy_score(np.array(val), np.array(prediction))
 print("Accuracy: "+acc)
 
