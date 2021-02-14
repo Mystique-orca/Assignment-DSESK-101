@@ -1,7 +1,10 @@
 '''
 Author: Sumesh Meppadath
+Feb 13, 2021
+Title: Implementation of regression techniques on time-series data to
+generate future predictions
 Module: Fast Fourier Transform Forecasting Model (FFT) model for group resource prediction
-Date: Feb 13, 2021
+
 
 Reference for freq parameter for time series model
 Alias    Description
