@@ -1,7 +1,9 @@
 '''
 Author: Sumesh Meppadath
-Module: Pre-processing module
-Date: Feb 13, 2021
+Feb 13, 2021
+Title: Implementation of regression techniques on time-series data to
+generate future predictions
+Module: Pre-processing
 '''
 
 #imports
