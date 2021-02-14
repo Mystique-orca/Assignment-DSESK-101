@@ -40,7 +40,6 @@ from darts import TimeSeries
 from darts.models import FFT
 from darts.dataprocessing.transformers import MissingValuesFiller
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score
 
 from darts.metrics import mape
 from darts.utils.missing_values import fill_missing_values
@@ -88,10 +87,8 @@ model.fit(train)
 pred_val = model.predict(len(val))
 
 #Evaluation metrics
-train.plot()
-val.plot()
-pred_val.plot()
+series.plot(label='actual')
+pred_val.plot(label='forecast', lw=3)
+plt.legend()
 print("MAPE:", mape(pred_val, val))
-acc = accuracy_score(np.array(val), np.array(pred_val))
-print("Accuracy: "+acc)
 
