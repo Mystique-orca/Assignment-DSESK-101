@@ -42,7 +42,6 @@ from darts.models import ExponentialSmoothing
 from darts.dataprocessing.transformers import Scaler, MissingValuesFiller
 import matplotlib.pyplot as plt
 from darts.metrics import mape
-from sklearn.metrics import accuracy_score
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -88,10 +87,8 @@ model.fit(train)
 prediction = model.predict(len(val))
 
 #Evaluation metrics
-train.plot()
-val.plot()
-prediction.plot()
+series.plot(label='actual')
+prediction.plot(label='forecast', lw=3)
+plt.legend()
 print("MAPE:", mape(prediction, val))
-acc = accuracy_score(np.array(val), np.array(prediction))
-print("Accuracy: "+acc)
 
