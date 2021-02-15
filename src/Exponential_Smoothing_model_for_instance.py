@@ -90,7 +90,7 @@ model.fit(train)
 prediction = model.predict(len(val))
 
 #Evaluation metrics
-series.plot(label='actual')
+rescaled.plot(label='actual')
 prediction.plot(label='forecast', lw=3)
 plt.legend()
 print("MAPE:", mape(prediction, val))
